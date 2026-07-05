@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neethivalavan D — Digital Marketing Executive</title>
+<meta name="description" content="Digital marketing portfolio of Neethivalavan D — Meta Ads, Google Ads, SEO and campaign strategy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0F1B2D;
+    --bg-surface: #16243A;
+    --bg-surface-2: #1C2E48;
+    --line: #2A3B57;
+    --amber: #FFC94A;
+    --mint: #5EEAD4;
+    --text: #F5F3EC;
+    --text-muted: #9CA8BD;
+    --radius: 14px;
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3{ font-family: 'Space Grotesk', sans-serif; margin:0; letter-spacing: -0.01em; }
+  .mono{ font-family: 'IBM Plex Mono', monospace; }
+  a{ color: inherit; }
+  .wrap{ max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  section{ padding: 96px 0; }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mint);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before{ content:''; width: 20px; height: 1px; background: var(--mint); display:inline-block; }
+
+  /* Header */
+  header{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(15,27,45,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap{ display:flex; align-items:center; justify-content:space-between; padding: 18px 24px; }
+  .brand{ display:flex; align-items:center; gap:12px; font-family:'Space Grotesk'; font-weight:600; font-size:16px; }
+  .brand .mark{
+    width:34px; height:34px; border-radius:9px;
+    background: linear-gradient(135deg, var(--amber), var(--mint));
+    color: #0F1B2D; display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:14px;
+  }
+  nav{ display:flex; gap: 28px; font-size: 14px; color: var(--text-muted); }
+  nav a{ text-decoration:none; transition: color .2s; }
+  nav a:hover{ color: var(--text); }
+  @media (max-width: 720px){ nav{ display:none; } }
+
+  /* Hero */
+  .hero{ padding-top: 72px; }
+  .hero .wrap{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items:center; }
+  @media (max-width: 900px){ .hero .wrap{ grid-template-columns: 1fr; } }
+  .hero h1{ font-size: clamp(32px, 4.6vw, 52px); line-height: 1.08; }
+  .hero h1 .hl{ color: var(--amber); }
+  .hero p.lead{ color: var(--text-muted); font-size: 17px; max-width: 480px; margin-top: 20px; }
+  .cta-row{ display:flex; gap:14px; margin-top: 32px; flex-wrap: wrap; }
+  .btn{
+    padding: 13px 22px; border-radius: 999px; font-size: 14px; font-weight: 600;
+    text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+    border: 1px solid transparent; cursor:pointer; transition: transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover{ transform: translateY(-2px); }
+  .btn-primary{ background: var(--amber); color: #14202F; }
+  .btn-ghost{ border-color: var(--line); color: var(--text); }
+
+  /* Bill widget - signature element */
+  .bill-card{
+    background: var(--bg-surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .bill-card::before{
+    content: 'CASE STUDY';
+    position:absolute; top:16px; right:-38px;
+    background: var(--mint); color:#0F1B2D;
+    font-family:'IBM Plex Mono'; font-size:10px; font-weight:600; letter-spacing:0.08em;
+    padding: 4px 40px; transform: rotate(35deg);
+  }
+  .bill-top{ display:flex; justify-content:space-between; align-items:baseline; font-family:'IBM Plex Mono'; font-size:12px; color: var(--text-muted); margin-bottom: 20px;}
+  .bill-rows{ display:flex; align-items:center; gap: 18px; }
+  .bill-col{ flex:1; text-align:center; }
+  .bill-col .label{ font-family:'IBM Plex Mono'; font-size:11px; color: var(--text-muted); text-transform:uppercase; letter-spacing:.06em; }
+  .bill-col .amount{ font-family:'Space Grotesk'; font-weight:700; font-size:30px; margin-top:8px; }
+  .bill-col.before .amount{ color:#FF8B7A; }
+  .bill-col.after .amount{ color: var(--mint); }
+  .arrow{ font-size: 22px; color: var(--amber); }
+  .bill-foot{ margin-top:22px; padding-top:18px; border-top: 1px dashed var(--line); font-size:13px; color: var(--text-muted); }
+  .bill-foot b{ color: var(--text); }
+
+  /* Services */
+  .services-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px; }
+  @media (max-width: 900px){ .services-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 560px){ .services-grid{ grid-template-columns: 1fr; } }
+  .service-card{
+    background: var(--bg-surface); border:1px solid var(--line); border-radius: var(--radius);
+    padding: 26px 22px; transition: border-color .2s ease, transform .2s ease;
+  }
+  .service-card:hover{ border-color: var(--amber); transform: translateY(-4px); }
+  .service-card .num{ font-family:'IBM Plex Mono'; font-size: 12px; color: var(--amber); }
+  .service-card h3{ font-size: 18px; margin-top: 14px; }
+  .service-card p{ color: var(--text-muted); font-size: 14px; margin-top: 10px; }
+
+  /* Case study section */
+  .case-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 44px; align-items:start; }
+  @media (max-width: 900px){ .case-grid{ grid-template-columns: 1fr; } }
+  .framework{ display:flex; flex-direction:column; gap: 14px; }
+  .framework .step{ display:flex; gap: 16px; padding: 16px; background: var(--bg-surface); border-radius: 12px; border:1px solid var(--line); }
+  .framework .step .tag{ font-family:'IBM Plex Mono'; font-size:11px; color: var(--amber); min-width: 60px; text-transform:uppercase; padding-top:2px;}
+  .framework .step p{ margin:0; font-size: 14px; color: var(--text-muted); }
+  .poster-frame{ border-radius: var(--radius); overflow:hidden; border:1px solid var(--line); }
+  .poster-frame img{ width:100%; display:block; }
+  .poster-cap{ font-family:'IBM Plex Mono'; font-size:12px; color: var(--text-muted); margin-top: 12px; }
+  .usp-chips{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 18px; }
+  .chip{ font-size: 12px; padding: 7px 13px; border-radius: 999px; background: var(--bg-surface-2); border:1px solid var(--line); color: var(--text-muted); }
+
+  /* Certification */
+  .cert-grid{ display:grid; grid-template-columns: 1fr 1.3fr; gap: 44px; align-items:center; margin-top: 40px; }
+  @media (max-width: 900px){ .cert-grid{ grid-template-columns: 1fr; } }
+  .cert-img{ border-radius: var(--radius); overflow:hidden; border: 1px solid var(--line); }
+  .cert-img img{ width:100%; display:block; }
+  .cert-list{ list-style:none; padding:0; margin: 20px 0 0; display:flex; flex-direction:column; gap:12px; }
+  .cert-list li{ display:flex; gap:12px; font-size:14px; color: var(--text-muted); }
+  .cert-list li::before{ content:'✓'; color: var(--mint); font-weight:700; }
+
+  /* Tools */
+  .tools-wrap{ margin-top: 36px; display:flex; flex-wrap:wrap; gap: 10px; }
+  .tool-pill{ font-family:'IBM Plex Mono'; font-size: 13px; padding: 9px 16px; border-radius: 8px; background: var(--bg-surface); border:1px solid var(--line); }
+
+  /* Contact */
+  .contact-card{
+    background: linear-gradient(135deg, var(--bg-surface), var(--bg-surface-2));
+    border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 44px; margin-top: 40px;
+    display:grid; grid-template-columns: 1.2fr 1fr; gap: 40px;
+  }
+  @media (max-width: 800px){ .contact-card{ grid-template-columns:1fr; padding: 30px;} }
+  .contact-links{ display:flex; flex-direction:column; gap: 16px; }
+  .contact-link{ display:flex; align-items:center; gap:14px; text-decoration:none; font-size:15px; padding: 14px 16px; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid var(--line); transition: border-color .2s; }
+  .contact-link:hover{ border-color: var(--amber); }
+  .contact-link .ico{ width: 34px; height:34px; border-radius:8px; background: var(--bg); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+
+  footer{ padding: 40px 0; text-align:center; color: var(--text-muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition: none !important; animation: none !important; }
+  }
+
+  :focus-visible{ outline: 2px solid var(--mint); outline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="mark">ND</span> Neethivalavan D</div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#certification">Certification</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary" style="padding:10px 18px;">Hire me</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Digital Marketing Executive · Chennai</div>
+      <h1>I turn ad spend into <span class="hl">measurable results</span>, not just impressions.</h1>
+      <p class="lead">Trained in Meta Ads, Google Ads, SEO and campaign strategy. I research the audience, write the copy, test the creative, and read the numbers — end to end.</p>
+      <div class="cta-row">
+        <a href="#work" class="btn btn-primary">See the case study</a>
+        <a href="assets/Neethivalavan_D_Resume.pdf" class="btn btn-ghost" download>Download résumé</a>
+      </div>
+    </div>
+    <div class="bill-card">
+      <div class="bill-top"><span>MONTHLY EB BILL</span><span>REAL CAMPAIGN RESULT</span></div>
+      <div class="bill-rows">
+        <div class="bill-col before">
+          <div class="label">Before solar</div>
+          <div class="amount">₹10,000</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="bill-col after">
+          <div class="label">After solar</div>
+          <div class="amount">₹2,000</div>
+        </div>
+      </div>
+      <div class="bill-foot">Messaging built around this single number drove the entire ad angle for a solar installer campaign — <b>see how below</b>.</div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What I do</div>
+    <h2 style="font-size: clamp(24px,3vw,34px);">Four ways I grow a brand's numbers</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="num">01</div>
+        <h3>SEO</h3>
+        <p>Keyword research, on-page fixes, and Search Console monitoring to get a site found before it's paid for.</p>
+      </div>
+      <div class="service-card">
+        <div class="num">02</div>
+        <h3>Social Media Marketing</h3>
+        <p>Content calendars and creative direction for Meta and Instagram, built around what the audience actually stops scrolling for.</p>
+      </div>
+      <div class="service-card">
+        <div class="num">03</div>
+        <h3>Paid Ads</h3>
+        <p>Meta & Google Ads campaigns — audience targeting, retargeting, and Advantage+ creative testing to lower cost per lead.</p>
+      </div>
+      <div class="service-card">
+        <div class="num">04</div>
+        <h3>Content & Email</h3>
+        <p>Hook-Lead-Body-CTA copywriting and email sequences that address objections instead of just listing features.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="background: var(--bg-surface);">
+  <div class="wrap">
+    <div class="eyebrow">Case study</div>
+    <h2 style="font-size: clamp(24px,3vw,34px);">Solar installation campaign — self-initiated project</h2>
+    <p style="color:var(--text-muted); max-width:640px; margin-top:14px;">I researched real objections solar buyers have, then built a full Meta Ads campaign around them — from customer pain points to five finished ad creatives.</p>
+
+    <div class="case-grid">
+      <div>
+        <h3 style="font-size:16px; margin-bottom:16px; color:var(--text-muted); font-family:'IBM Plex Mono'; text-transform:uppercase; letter-spacing:.06em;">Ad copy framework used</h3>
+        <div class="framework">
+          <div class="step"><div class="tag">Hook</div><p>"Planning to install solar but not sure what happens in the rainy season?" — opens with the objection buyers were already thinking.</p></div>
+          <div class="step"><div class="tag">Lead</div><p>Reframes rainy season as only 3–4 months a year, then anchors the value: bill drops from ₹10,000 to ₹2,000, plus up to ₹1,00,000 in government subsidy, handled end-to-end.</p></div>
+          <div class="step"><div class="tag">Body</div><p>Builds trust with 10+ years of experience and in-house manufacturing — removing the middleman objection.</p></div>
+          <div class="step"><div class="tag">CTA</div><p>Form-fill offer: 10% off plus a free solar product for the first 10 customers, to create urgency without discounting the core price.</p></div>
+        </div>
+        <div class="usp-chips">
+          <span class="chip">Free subsidy assistance</span>
+          <span class="chip">Free consultation</span>
+          <span class="chip">Long-term warranty</span>
+          <span class="chip">5 creative variations</span>
+        </div>
+      </div>
+      <div>
+        <div class="poster-frame">
+          <img src="assets/poster.jpg" alt="Five ad creative variations designed for the solar installation campaign, covering electricity bill savings, subsidy value, before/after comparison, brand credibility, and a limited-time offer.">
+        </div>
+        <p class="poster-cap">5 creative angles tested: bill savings · subsidy value · before/after · credibility · limited-time offer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certification">
+  <div class="wrap">
+    <div class="eyebrow">Certification</div>
+    <h2 style="font-size: clamp(24px,3vw,34px);">100-day Digital Marketing training, completed</h2>
+    <div class="cert-grid">
+      <div class="cert-img">
+        <img src="assets/certificate.jpg" alt="Certificate of completion for the Advanced Digital Marketing 100 Days Challenge, issued to Neethivalavan D by The High Paying Clients">
+      </div>
+      <div>
+        <p style="color:var(--text-muted);">Completed structured training covering Meta Ads, Google Ads, lead generation, SEO, audience targeting, and campaign optimization — through The High Paying Clients' 100 Days Challenge (Apr–May 2026).</p>
+        <ul class="cert-list">
+          <li>Meta Ads Manager & Google Ads platform training</li>
+          <li>Lead generation and audience targeting</li>
+          <li>SEO and campaign optimization</li>
+          <li>Applied directly in the solar campaign case study above</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tools-wrap">
+      <span class="tool-pill">Meta Ads Manager</span>
+      <span class="tool-pill">Google Ads</span>
+      <span class="tool-pill">Google Analytics</span>
+      <span class="tool-pill">Search Console</span>
+      <span class="tool-pill">Canva</span>
+      <span class="tool-pill">CapCut</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get in touch</div>
+    <h2 style="font-size: clamp(24px,3vw,34px);">Have a campaign that needs better numbers?</h2>
+    <div class="contact-card">
+      <div>
+        <p style="color:var(--text-muted); max-width:420px;">I'm looking for an entry-level digital marketing role where I can run real campaigns end to end — from audience research to the ad account. Chennai-based, open to remote work.</p>
+      </div>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:neethi1812002@gmail.com"><span class="ico">✉</span> neethi1812002@gmail.com</a>
+        <a class="contact-link" href="tel:+919003881733"><span class="ico">☎</span> +91 90038 81733</a>
+        <a class="contact-link" href="https://www.linkedin.com/in/neethi-valavan-307924356" target="_blank" rel="noopener"><span class="ico">in</span> linkedin.com/in/neethi-valavan-307924356</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Neethivalavan D · Chennai, Tamil Nadu
+</footer>
+
+</body>
+</html>
